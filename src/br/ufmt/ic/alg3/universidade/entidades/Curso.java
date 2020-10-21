@@ -7,7 +7,7 @@ package br.ufmt.ic.alg3.universidade.entidades;
 
 public class Curso {
     private String nome;
-    private int id;
+    private int identificacao;
 
 
     public String getNome() {
@@ -18,12 +18,12 @@ public class Curso {
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
+    public int getIdentificacao() {
+        return identificacao;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdentificacao(int identificacao) {
+        this.identificacao = identificacao;
     }
 
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Disciplina {
     private String nome;
-    private int id;
+    private int identificacao;
     private List<Disciplina> preRequisito;
 
     public String getNome() {
@@ -21,12 +21,12 @@ public class Disciplina {
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
+    public int getIdentificacao() {
+        return identificacao;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdentificacao(int identificacao) {
+        this.identificacao = identificacao;
     }
 
     public List<Disciplina> getPreRequisito() {
