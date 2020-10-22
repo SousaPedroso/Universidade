@@ -5,9 +5,10 @@
  */
 package br.ufmt.ic.alg3.universidade.entidades;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Projeto {
+public class Projeto implements Serializable {
     private String nome;
     private int id;
     private Professor professor;

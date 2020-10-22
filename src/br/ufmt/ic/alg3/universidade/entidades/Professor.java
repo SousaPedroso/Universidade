@@ -5,7 +5,9 @@
  */
 package br.ufmt.ic.alg3.universidade.entidades;
 
-public class Professor {
+import java.io.Serializable;
+
+public class Professor implements Serializable {
     private String nome;
     private double salario;
     private String cpf;

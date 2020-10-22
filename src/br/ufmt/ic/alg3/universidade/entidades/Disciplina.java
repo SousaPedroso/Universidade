@@ -6,9 +6,10 @@
 package br.ufmt.ic.alg3.universidade.entidades;
 
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Disciplina {
+public class Disciplina implements Serializable {
     private String nome;
     private int identificacao;
     private List<Disciplina> preRequisito;

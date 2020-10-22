@@ -5,7 +5,9 @@
  */
 package br.ufmt.ic.alg3.universidade.entidades;
 
-public class Curso {
+import java.io.Serializable;
+
+public class Curso implements Serializable {
     private String nome;
     private int identificacao;
 
