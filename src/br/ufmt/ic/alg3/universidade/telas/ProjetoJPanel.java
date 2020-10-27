@@ -4,7 +4,8 @@ package br.ufmt.ic.alg3.universidade.telas;
 
 import br.ufmt.ic.alg3.universidade.entidades.Projeto;
 import br.ufmt.ic.alg3.universidade.persistencia.ProjetoDAO;
-import br.ufmt.ic.alg3.universidade.persistencia.arquivo.ProjetoDAOImplArq;
+import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
+
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
@@ -22,7 +23,7 @@ import java.util.List;
  */
 public class ProjetoJPanel extends javax.swing.JPanel {
 
-    private ProjetoDAO dao = new ProjetoDAOImplArq();
+    private ProjetoDAO dao = DAOFactory.createPreojetoDAO();
 
     /**
      * Creates new form ProjetoJPanel

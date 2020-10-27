@@ -4,7 +4,8 @@ package br.ufmt.ic.alg3.universidade.telas;
 
 import br.ufmt.ic.alg3.universidade.entidades.Professor;
 import br.ufmt.ic.alg3.universidade.persistencia.ProfessorDAO;
-import br.ufmt.ic.alg3.universidade.persistencia.arquivo.ProfessorDAOImplArq;
+import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
+
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
@@ -22,7 +23,7 @@ import java.util.List;
  */
 public class ProfessorJPanel extends javax.swing.JPanel {
 
-    private ProfessorDAO dao = new ProfessorDAOImplArq();
+    private ProfessorDAO dao = DAOFactory.createProfessorDAO();
     /**
      * Creates new form ProfessorJPanel
      */
