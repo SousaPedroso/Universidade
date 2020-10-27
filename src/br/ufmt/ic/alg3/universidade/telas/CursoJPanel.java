@@ -2,13 +2,14 @@ package br.ufmt.ic.alg3.universidade.telas;
 
 import br.ufmt.ic.alg3.universidade.persistencia.CursoDAO;
 import br.ufmt.ic.alg3.universidade.entidades.Curso;
-import br.ufmt.ic.alg3.universidade.persistencia.arquivo.CursoDAOImplArq;
+import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
+
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
 public class CursoJPanel extends javax.swing.JPanel {
 
-    private CursoDAO dao = new CursoDAOImplArq();
+    private CursoDAO dao = DAOFactory.createCursoDAO();
     /**
      * Creates new form CursoJPanel
      */

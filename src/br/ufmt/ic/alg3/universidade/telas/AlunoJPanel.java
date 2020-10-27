@@ -1,14 +1,15 @@
 package br.ufmt.ic.alg3.universidade.telas;
 
 import br.ufmt.ic.alg3.universidade.persistencia.AlunoDAO;
-import br.ufmt.ic.alg3.universidade.persistencia.arquivo.AlunoDAOImplArq;
 import br.ufmt.ic.alg3.universidade.entidades.Aluno;
+import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
+
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
 public class AlunoJPanel extends javax.swing.JPanel {
 
-    private AlunoDAO dao = new AlunoDAOImplArq();
+    private AlunoDAO dao = DAOFactory.createAlunoDAO();
     /**
      * Creates new form AlunoJPanel
      */
