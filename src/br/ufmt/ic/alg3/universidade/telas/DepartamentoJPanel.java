@@ -9,7 +9,8 @@ package br.ufmt.ic.alg3.universidade.telas;
 
 import br.ufmt.ic.alg3.universidade.entidades.Departamento;
 import br.ufmt.ic.alg3.universidade.persistencia.DepartamentoDAO;
-import br.ufmt.ic.alg3.universidade.persistencia.arquivo.DepartamentoDAOImplArq;
+import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
+
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.List;
  */
 public class DepartamentoJPanel extends javax.swing.JPanel {
 
-private DepartamentoDAO dao = new DepartamentoDAOImplArq();
+private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
     /**
      * Creates new form DepartamentoJPanel
      */

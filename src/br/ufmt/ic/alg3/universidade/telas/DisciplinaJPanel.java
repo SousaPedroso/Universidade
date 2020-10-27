@@ -12,13 +12,14 @@ package br.ufmt.ic.alg3.universidade.telas;
 
 import br.ufmt.ic.alg3.universidade.entidades.Disciplina;
 import br.ufmt.ic.alg3.universidade.persistencia.DisciplinaDAO;
-import br.ufmt.ic.alg3.universidade.persistencia.arquivo.DisciplinaDAOImplArq;
+import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
+
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
 public class DisciplinaJPanel extends javax.swing.JPanel {
 
-    private DisciplinaDAO dao = new DisciplinaDAOImplArq();
+    private DisciplinaDAO dao = DAOFactory.createDisciplinaDAO();
 
     /**
      * Creates new form DisciplinaJPanel
