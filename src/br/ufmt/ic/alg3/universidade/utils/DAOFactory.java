@@ -24,7 +24,7 @@ public class DAOFactory {
         return new ProfessorDAOImplArq();
     }
 
-     public static ProjetoDAO createPreojetoDAO(){
+     public static ProjetoDAO createProjetoDAO(){
         return new ProjetoDAOImplArq();
      }
 }

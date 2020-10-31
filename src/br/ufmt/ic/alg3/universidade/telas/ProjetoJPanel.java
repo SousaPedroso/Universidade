@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class ProjetoJPanel extends javax.swing.JPanel {
     
-    private ProjetoDAO dao = DAOFactory.createPreojetoDAO();
+    private ProjetoDAO dao = DAOFactory.createProjetoDAO();
 
     /**
      * Creates new form ProjetoJPanel
