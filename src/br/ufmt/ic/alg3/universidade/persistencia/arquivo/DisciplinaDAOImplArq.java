@@ -97,7 +97,7 @@ public class DisciplinaDAOImplArq implements DisciplinaDAO {
     }
 
 
-    public Disciplina getbyId(int id) {
+    public Disciplina getIdentificacao(int id) {
         loadArquivo();
         for (Disciplina c : disciplinas) {
             if(c.getIdentificacao() == id){

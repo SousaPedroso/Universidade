@@ -11,7 +11,7 @@ public interface DisciplinaDAO {
 
     public boolean remover (int identificacao);
 
-    public Disciplina getbyId (int identificacao);
+    public Disciplina getIdentificacao (int identificacao);
 
     public List<Disciplina> listar();
 
