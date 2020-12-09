@@ -6,9 +6,8 @@ package br.ufmt.ic.alg3.universidade.telas;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-import br.ufmt.ic.alg3.universidade.entidades.Departamento;
 import br.ufmt.ic.alg3.universidade.persistencia.DepartamentoDAO;
+import br.ufmt.ic.alg3.universidade.entidades.Departamento;
 import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
 
 import javax.swing.table.DefaultTableModel;
@@ -21,7 +20,7 @@ import java.util.List;
  */
 public class DepartamentoJPanel extends javax.swing.JPanel {
 
-private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
+    private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
     /**
      * Creates new form DepartamentoJPanel
      */
@@ -37,7 +36,7 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
             dfm.removeRow(0);
         }
         for (Departamento departamento : lista){
-            Object[] linha = new Object[2]; 
+            Object[] linha = new Object[2];
             linha[0] = departamento.getNome();
             linha[1] = departamento.getIdentificacao();
 
@@ -66,14 +65,14 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
 
         jButtonEditar.setText("Editar");
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEditarActionPerformed(evt);
             }
         });
 
         jButtonExcluir.setText("Excluir");
         jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExcluirActionPerformed(evt);
             }
         });
@@ -83,26 +82,26 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
         jLabelId.setText("Identificacão:");
 
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNomeActionPerformed(evt);
             }
         });
 
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalvarActionPerformed(evt);
             }
         });
 
         jButtonLimpar.setText("Limpar");
         jButtonLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonLimparActionPerformed(evt);
             }
         });
 
-        tabela.setModel(new DefaultTableModel(
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
 
                 },
@@ -180,7 +179,7 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
         );
     }// </editor-fold>
 
-    private void jButtonEditarActionPerformed(ActionEvent evt) {
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         int linha = tabela.getSelectedRow();
         if(linha >= 0){
@@ -192,7 +191,7 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
     }
 
 
-    private void jButtonExcluirActionPerformed(ActionEvent evt) {
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         int[] linhas = tabela.getSelectedRows();
         for (int linha : linhas){
@@ -203,7 +202,7 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
     }
 
 
-    private void jTextFieldNomeActionPerformed(ActionEvent evt) {
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
@@ -211,7 +210,12 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
         // TODO add your handling code here:
         Departamento d = new Departamento();
         d.setNome(jTextFieldNome.getText());
-        int identificacao = Integer.parseInt(jTextFieldId.getText());
+        int identificacao = 0;
+        try {
+            identificacao = Integer.parseInt(jTextFieldId.getText());
+        } catch (NumberFormatException ex){
+            identificacao = 0;
+        }
         d.setIdentificacao(identificacao);
         if(dao.getIdentificacao(identificacao) == null){
             dao.inserir(d);
@@ -222,7 +226,7 @@ private DepartamentoDAO dao = DAOFactory.createDepartamentoDAO();
         atualizarTabela();
     }
 
-    private void jButtonLimparActionPerformed(ActionEvent evt) {
+    private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         jTextFieldNome.setText("");
         jTextFieldId.setText("");

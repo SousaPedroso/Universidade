@@ -7,6 +7,10 @@ import br.ufmt.ic.alg3.universidade.utils.DAOFactory;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
+/**
+ *
+ * @author jean
+ */
 public class CursoJPanel extends javax.swing.JPanel {
 
     private CursoDAO dao = DAOFactory.createCursoDAO();
@@ -106,7 +110,7 @@ public class CursoJPanel extends javax.swing.JPanel {
             }
         });
 
-        tabela.setModel(new DefaultTableModel(
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
 
                 },
@@ -210,7 +214,12 @@ public class CursoJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         Curso c = new Curso();
         c.setNome(jTextFieldNome.getText());
-        int identificacao = Integer.parseInt(jTextFieldId.getText());
+        int identificacao = 0;
+        try{
+            identificacao = Integer.parseInt(jTextFieldId.getText());
+        } catch (NumberFormatException ex){
+            identificacao = 0;
+        }
         c.setIdentificacao(identificacao);
         if(dao.getIdentificacao(identificacao) == null){
             dao.inserir(c);
